@@ -1,6 +1,6 @@
 def call(String dockerHubUsername, String imageName) {
     // Install buildx
-    sh 'docker buildx create --use'
+    sh 'docker buildx create'
 
     // Build the Docker image with buildx
     sh "docker buildx build --platform linux/amd64,linux/arm64 --build-arg REACT_APP_RAPID_API_KEY=d245199e8emshd101669bdbafcf8p12d91ejsn53648793d8f6 -t ${imageName} ."
